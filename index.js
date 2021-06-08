@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2021 Karat Financial
+ *
+ * @summary Entry point to karat-api
+ * @author Ian Arko <ianrichardarko@gmail.com>
+ */
+
 // Imports
 const express = require('express');
 var path = require('path');
