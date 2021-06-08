@@ -14,27 +14,32 @@ export STRIPE_SECRET_KEY = < YOUR_KEY >
 export STRIPE_TEST_SECRET_KEY = < YOUR_KEY >
 ```
 
-## Design Parameter 1: API Design
-I decided to use Express.js since I recall from my conversation with Chris that this is what Karat is using.
+## Tech Stack
+- Express.js
+- npm
 
-## Nice to haves
-[ ] Improved Error handling
- 
-[ ] Mock tests with Jest.
+## Design Questions
+- How else might you have improved your solution given more time?
+    - See "Architecture Improvements" below.
+- Feedback
+    - Approximately how many hours did you spend on this challenge?
+        - TODO
+    - What did you find most interesting / rewarding about this challenge?
+        - TODO
+    - What did you find least interesting / rewarding about this challenge?
+        - TODO
 
-[ ] Containerize for easier dev between team and for easier scale
-
-[ ] Deploy said container
 
 ## Architecture Improvements
-[ ] Store the secret key in a secure way
-
-[ ] Allow Auth and make it so users can only access their own resources
-
-[ ] Allow for easy toggling between test, dev, and prod.
-
-[ ] Add an API Gateway for throttling throttling
-
-[ ] Add multiple Express severs in different regions with a load balancer for improved access
+- [ ] Improved Error handling
+- [ ] Mock tests with Jest.
+- [ ] Containerize for easier dev between team and for easier scale
+- [ ] Deploy said container
+- [x] Store the secret key in a secure way
+- [ ] Allow Auth and make it so users can only access their own resources
+    - A stateless architecture would allow the most flexibility for mutli-region support, but if we only have one instance, we'll see higher overhead
+- [ ] Allow for easy toggling between test and prod keys
+- [ ] Add an API Gateway for throttling throttling
+- [ ] Add multiple Express severs in different regions with a load balancer for improved access
     - NOTE: For this use case, we don't need to worry about scalability. Say we have at most 50k users, but an Express app can handle ~10k concurrent connections.
 
