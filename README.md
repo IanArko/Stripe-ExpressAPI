@@ -41,5 +41,5 @@ export STRIPE_TEST_SECRET_KEY = < YOUR_KEY >
 - [ ] Allow for easy toggling between test and prod keys
 - [ ] Add an API Gateway for throttling throttling
 - [ ] Add multiple Express severs in different regions with a load balancer for improved access
-    - NOTE: For this use case, we don't need to worry about scalability. Say we have at most 50k users, but an Express app can handle ~10k concurrent connections.
+    - NOTE: For this use case, we don't need to worry about number of requets. Say we have at most 50k users, but an Express app can handle ~10k concurrent connections. Having multi-region support would allow 2 main benefits. 1) Improved access time based on geogrpahy. 2) Higher fault tolerance in case a region goes down.
 
