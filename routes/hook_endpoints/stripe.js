@@ -11,6 +11,7 @@ const express = require("express");
 var router = express.Router();
 router.use(express.json()); // for parsing application/json
 router.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+var handler = require('./../../library/hooks_stripe');
 
 router.post("/", (req, res) => {
   const event = req.body;
@@ -18,33 +19,27 @@ router.post("/", (req, res) => {
   // Handle the events
   switch (event.type) {
     case "issuing_authorization.created":
-      console.log(`Authorization was successfully updated!`);
-      // TODO: Handle event somehow
+      handler.IssuingAuthorizationCreated(event);
       break;
 
     case "issuing_authorization.updated":
-      console.log(`Updated a purchase authorization!`);
-      // TODO: Handle event somehow
+      handler.IssuingAuthorizationUpdated(event);
       break;
 
     case "issuing_cardholder.created":
-      console.log(`Cardholder added.`);
-      // TODO: Handle event somehow
+      handler.IssuingCardholderCreated(event);
       break;
 
     case "issuing_cardholder.updated":
-      console.log(`Cardholder updated.`);
-      // TODO: Handle event somehow
+      handler.IssuingCardholderUpdated(event);
       break;
 
     case "issuing_transaction.created":
-      console.log(`Transaction added.`);
-      // TODO: Handle event somehow
+      handler.IssuingTransactionCreated(event);
       break;
 
     case "issuing_transaction.updated":
-      console.log(`Transaction updated.`);
-      // TODO: Handle event somehow
+      handler.IssuingTransactionUpdated(event);
       break;
 
     default:
