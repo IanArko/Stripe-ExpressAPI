@@ -5,15 +5,13 @@ var path = require('path');
 // Setup Express App
 const app = express();
 
-// App API route
+// Import routes
 var apiRouter = require('./routes/api');
-app.use('/api', apiRouter);
-
-// App HOOKS route
 var hooksRouter = require('./routes/hooks');
-app.use('/hooks', hooksRouter);
 
-// APP Static site
+// Apply routes to router
+app.use('/api', apiRouter);
+app.use('/hooks', hooksRouter);
 app.use('/', express.static('views'))
 
 // For Undefined Routes Send 404
