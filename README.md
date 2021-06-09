@@ -40,3 +40,7 @@ export STRIPE_TEST_SECRET_KEY = < YOUR_KEY >
     - NOTE: For this use case, we aren't as worried about the number of requests. Say we have at most 50k users, but an Express app can handle ~10k concurrent connections. Having multi-region support would allow 2 main benefits. 1) Improved access time based on geography. 2) Higher fault tolerance in case a region goes down.
 - [ ] Extend multi-card functionality
     - It didn't seem like the Cardholder object contained which cards were associated with the Cardholder. We may need to create a db to keep track of the user data and which cards are associated with a specific user.
+
+## Design Notes
+1. The paths are verbose for this application. I intended to make this design so that new resources could easily be added in the future.
+2. The endpoints were designed to be as close to stripe's as I could without bloating the design with features that weren't needed for our specific application.
