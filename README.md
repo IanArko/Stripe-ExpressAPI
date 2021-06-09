@@ -18,6 +18,17 @@ export STRIPE_TEST_SECRET_KEY=< YOUR_KEY >
 4. Start the server and have fun.
 `npm start`
 
+
+## Testing Notes
+The main eendpoints are the following:
+1. yourdomain/api/stripe/cards/:cardID
+2. yourdomain/api/stripe/cardholders/:cardholderID
+3. yourdomain/api/stripe/transactions/:cardID
+    - Query Params: limit (defaults to 25), starting_after (for pagination) 
+4. yourdomain/api/stripe/authorizations/:cardID
+    - Query Params: limit (defaults to 25), starting_after (for pagination)
+5. yourdomain/hooks/stripe
+
 ## Design Questions
 - How else might you have improved your solution given more time?
     - See "Architecture Improvements" below.
