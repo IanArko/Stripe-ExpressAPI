@@ -1,10 +1,10 @@
 /**
  * Copyright (c) 2021 Karat Financial
  *
- * @summary cardholder endpoint supporting GET
+ * @summary cardholders endpoint extending stripe cardholders api
  * @author Ian Arko <ianrichardarko@gmail.com>
  *
- * Created at     : 2021-06-08 09:55:00
+ * Created at : 2021-06-08 09:55:00
  */
 
 // Configure Imports
@@ -18,7 +18,7 @@ const stripe = require("stripe")(STRIPE_KEY);
 
 /**
  * Method  : GET
- * path    : ./api/cardholder/:cardholderID
+ * path    : ./api/stripe/cardholders/:cardholderID
  */
 router.get("/:cardholderID", async (req, res) =>  {
   try {
@@ -32,18 +32,16 @@ router.get("/:cardholderID", async (req, res) =>  {
   }
 });
 
-// Send 405 status for unsuppooted HTTP Request types
-router.post("/", async (req, res) => {
-  res.sendStatus(405);
-});
+/* -------------------- TODO --------------------
+ *  Update a cardholder   : POST /cardholders/:id
+ *  Create a cardholder   : POST /cardholders/
+ *  List cardholders      : GET /cardholders/
+ */
 
-router.delete("/", async (req, res) => {
-  res.sendStatus(405);
-});
-
-router.put("/", async (req, res) => {
-  res.sendStatus(405);
-});
+// Send 501 status for currently unsupported requests
+router.get('*', function (req, res) {
+  res.sendStatus(501);
+})
 
 // Export router
 module.exports = router;
