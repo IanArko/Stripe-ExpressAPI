@@ -3,16 +3,20 @@ The objecive of this repo is to:
 - Collect transaction and authorization data from Stripe
 - Build the necessary backend APIs to populate the necessary data in the provided design.
 
-# Getting Started
-1. Setup packages:
+## Getting Started
+1. Clone this repo
+`git clone https://github.com/IanArko/KaratChallenge.git`
+2. Setup packages:
 `npm install`
-2. Set env variables in your shell:
+3. Set env variables in your shell:
 ```
-export PORT = 80
+export PORT = <DESIRED_PORT>
 export TEST_MODE = < ON == 1 and OFF = 0 >
 export STRIPE_SECRET_KEY = < YOUR_KEY >
 export STRIPE_TEST_SECRET_KEY = < YOUR_KEY >
 ```
+4. Start the server and have fun.
+`npm start`
 
 ## Design Questions
 - How else might you have improved your solution given more time?
