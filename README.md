@@ -10,10 +10,10 @@ The objecive of this repo is to:
 `npm install`
 3. Set env variables in your shell:
 ```
-export PORT = <DESIRED_PORT>
-export TEST_MODE = < ON == 1 and OFF = 0 >
-export STRIPE_SECRET_KEY = < YOUR_KEY >
-export STRIPE_TEST_SECRET_KEY = < YOUR_KEY >
+export PORT=<DESIRED_PORT>
+export TEST_MODE=< ON == 1 and OFF = 0 >
+export STRIPE_SECRET_KEY=< YOUR_KEY >
+export STRIPE_TEST_SECRET_KEY=< YOUR_KEY >
 ```
 4. Start the server and have fun.
 `npm start`
@@ -29,7 +29,7 @@ export STRIPE_TEST_SECRET_KEY = < YOUR_KEY >
     - What did you find least interesting / rewarding about this challenge?
         - The only thing I didn't like about the project was that there wasn't a super meaningful way to do a deployment. I didn't want to spend time doing a deployment since it wouldn't improve the core functionality or the testability of the project.
 
-## Architecture Improvements
+## Improvements
 - [ ] Write tests with Jest for more consistent testability.
 - [ ] Add dotenv to make setup easier
 - [ ] Deploy Container (Maybe use Amazon ECR and an ECS cluster)
