@@ -1,6 +1,11 @@
 // Handle a IssuingAuthorizationCreated event
 function IssuingAuthorizationCreated(event) {
   console.log(`Authorization was successfully created!`);
+  // TODO: Use hooks to approve or decline an authorization
+  // POST 
+  // /v1/issuing/authorizations/:id/approve
+  //   POST 
+  // /v1/issuing/authorizations/:id/decline
 }
 
 function IssuingAuthorizationUpdated(event) {
@@ -9,6 +14,7 @@ function IssuingAuthorizationUpdated(event) {
 
 function IssuingCardholderCreated(event) {
   console.log(`Cardholder was successfully created!`);
+  // TODO: Update a user account with the stripe cardholder id
 }
 
 function IssuingCardholderUpdated(event) {
